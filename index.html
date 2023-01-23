@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kollo 2023</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+    </style>
+    <link rel="stylesheet" href="dist/main.css" />
+    <script type="text/javascript" src="dist/index.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <div class="banner">
+        <h1>
+          <span class="text-background text-background__title">Kollo 2023</span>
+        </h1>
+        <h4>
+          <span class="text-background__sub-title">
+            Kollo är en lägerverksamhet för barn som är mellan 10 och 15 år
+            gamla. Läs om några av våra aktiviteter och skicka in en anmälan om
+            du är intreserad av kollo 2023.
+          </span>
+        </h4>
+      </div>
+    </header>
+    <main>
+      <h2 class="section__header">Populära aktiviteter</h2>
+      <section class="activities">
+        <a href="#" class="activity">
+          <img
+            src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fstatic.logicalcms.com%2Fperfectevent.se%2Fimages%2F720x400%2F1568378782_9653ba8020.jpg&f=1&nofb=1&ipt=d9a65cd6ca5764c5a0275079551d14a7956dcae0bd2e92df6dfb5fa5f7726c4a&ipo=images"
+            alt="Matlagning"
+          />
+          <div class="activity__info">
+            <h3>Matlagning</h3>
+            <p>Vi lagar mat och har roligt tillsammans.</p>
+          </div>
+        </a>
+        <a href="#" class="activity">
+          <img
+            src="http://teachers.egfi-k12.org/wp-content/uploads/2016/01/super-soaker-stream-300x200.jpg"
+            alt="Lekar"
+          />
+          <div class="activity__info">
+            <h3>Lekar</h3>
+            <p>Roliga lekar både ute och inomhus.</p>
+          </div>
+        </a>
+        <a href="#" class="activity">
+          <img
+            src="https://www.slojdkommerlastad.se/wp-content/uploads/2020/08/naverslidor-red-480x476.jpg"
+            alt="Slöjd"
+          />
+          <div class="activity__info">
+            <h3>Slöjd</h3>
+            <p>Träslöjd och syslöjd i fina nya lokaler.</p>
+          </div>
+        </a>
+        <a href="#" class="activity">
+          <img
+            src="https://bloggen.laget.se/wp-content/uploads/2020/03/idrott-coronainfo.jpg"
+            alt="Idrott"
+          />
+          <div class="activity__info">
+            <h3>Idrott</h3>
+            <p>Testa på olika nya idrotter och sporter.</p>
+          </div>
+        </a>
+      </section>
+      <section class="signup" id="signup">
+        <h2 class="section__header">Anmäl dig till kollo</h2>
+        <form class="form" formnovalidate>
+          <fieldset>
+            <legend>Personuppgifter</legend>
+            <div class="form-control">
+              <label for="name">Namn *</label>
+              <input type="text" name="name" id="name" required />
+              <div class="info-badge">
+                <figure class="info-badge__icon">i</figure>
+                <div class="info-badge__label">
+                  Skriv ditt för- och efternamn
+                </div>
+              </div>
+            </div>
+            <div class="form-control">
+              <label for="email">E-post *</label>
+              <input type="email" name="email" id="email" required />
+            </div>
+            <div class="form-control">
+              <label for="age">Ålder</label>
+              <input type="number" name="age" id="age" min="10" max="15" />
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>Dina intressen</legend>
+            <div class="form-control">
+              <label for="intrest">Jag är intresserad av *</label>
+              <div class="interest-input">
+                <input type="text" name="interest" id="interest" />
+                <button
+                  type="button"
+                  onclick="addInterest()"
+                  class="button interest-input__button"
+                >
+                  <svg class="oo sl du" viewBox="0 0 16 16">
+                    <path
+                      d="M15 7H9V1c0-.6-.4-1-1-1S7 .4 7 1v6H1c-.6 0-1 .4-1 1s.4 1 1 1h6v6c0 .6.4 1 1 1s1-.4 1-1V9h6c.6 0 1-.4 1-1s-.4-1-1-1z"
+                    ></path>
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div>
+              <ul class="interests" id="interests"></ul>
+            </div>
+            <div class="interests-error" id="interests-error">
+              <span class="interests-error__icon">!</span>Minst ett intresse
+              måste läggas till
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>Boende</legend>
+            <div class="form-group">
+              <h4>Kan du tänka dig att dela rum?</h4>
+              <input
+                type="radio"
+                name="share"
+                id="shared-room"
+                value="true"
+                onclick="toggleShareType(true)"
+              />
+              <label for="share">Ja</label>
+              <input
+                type="radio"
+                name="share"
+                id="single-room"
+                value="false"
+                onclick="toggleShareType(false)"
+                checked
+              />
+              <label for="single-room">Nej</label>
+            </div>
+            <div class="form-group hide" id="share-type">
+              <h4>Typ av rum</h4>
+              <input
+                type="radio"
+                name="shareType"
+                id="mixed"
+                value="mixed"
+                checked
+              />
+              <label for="mixed">Tjejer och killar</label>
+              <input type="radio" name="shareType" id="girls" value="girls" />
+              <label for="girls">Tjejer</label>
+              <input type="radio" name="shareType" id="boys" value="boys" />
+              <label for="boys">Killar</label>
+            </div>
+            <div class="form-group">
+              <h4>Jag kan ta med</h4>
+              <input type="checkbox" name="sleepingBag" id="sleepingBag" />
+              <label for="sleepingBag">Sovsäck</label>
+              <input type="checkbox" name="pillow" id="pillow" />
+              <label for="pillow">Kudde</label>
+              <input type="checkbox" name="sleepingMat" id="sleepingMat" />
+              <label for="sleepingMat">Liggunderlag</label>
+            </div>
+          </fieldset>
+
+          <button type="submit" class="button">Skicka anmälan</button>
+        </form>
+      </section>
+      <section class="signup-success hide" id="signup-success">
+        <div class="signup-success__container">
+          <h2>Välkommen till Kollo 2023</h2>
+          <div class="signup-success__icon">
+            <svg class="" viewBox="0 0 16 16">
+              <path
+                d="M8 0C3.6 0 0 3.6 0 8s3.6 8 8 8 8-3.6 8-8-3.6-8-8-8zM7 11.4L3.6 8 5 6.6l2 2 4-4L12.4 6 7 11.4z"
+              ></path>
+            </svg>
+          </div>
+          <ul id="signup-success-information"></ul>
+          <button class="button" onclick="closeSuccess()">
+            Ta mig tillbaka
+          </button>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

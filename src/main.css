@@ -1,0 +1,391 @@
+html {
+  height: 100%;
+  box-sizing: border-box;
+  font-size: 16px;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  height: 100%;
+  background-color: #f1f5f9;
+  font-weight: normal;
+  padding: 0;
+  margin: 0;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 2.8rem;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  background: radial-gradient(#b1b0da 1px, #fff 2px);
+  background-size: 30px 30px;
+  height: 25vh;
+}
+
+.banner {
+  padding: 1.5rem 2rem;
+  max-width: 800px;
+}
+
+.banner h1 {
+  line-height: 1;
+  margin-bottom: 0.95rem;
+}
+
+.banner h4 {
+  line-height: 1.5;
+  font-size: 17px;
+  background-color: #fff;
+}
+@media (max-width: 600px) {
+  .banner h4 {
+    display: none;
+  }
+}
+
+.text-background {
+  display: inline-block;
+  padding: 0.25rem 1rem;
+}
+
+.text-background__title {
+  background-color: #c7d2fe;
+  color: #1e293b;
+}
+
+.text-background__sub-title {
+  color: #494949;
+  background-color: #fff;
+  line-height: 1.5;
+}
+
+main {
+  padding: 3rem 1.5rem;
+  max-width: 1920px;
+}
+@media (max-width: 600px) {
+  main {
+    padding: 3rem 1rem;
+  }
+}
+
+.section__header {
+  margin-bottom: 0.75rem;
+}
+
+section {
+  margin-bottom: 3rem;
+}
+
+.activities {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.activity {
+  color: inherit;
+  text-decoration: none;
+  background-color: #fff;
+  border-radius: 4px;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 0rem 0.5rem #e9e9e9;
+  border: 1px solid #d6e1ee;
+}
+
+@media (max-width: 1024px) {
+  .activities {
+    flex-wrap: wrap;
+  }
+  .activity {
+    flex: 0 0 calc(50% - 1rem);
+  }
+}
+@media (max-width: 600px) {
+  .activity {
+    flex: 0 0 100%;
+  }
+}
+
+.activity img {
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  height: 133px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.activity__info {
+  padding: 1rem;
+}
+
+.activity__info h3 {
+  margin-bottom: 0.5rem;
+}
+
+.signup {
+  padding: 1rem 0;
+}
+
+.form {
+  max-width: 500px;
+}
+
+.form fieldset {
+  margin-bottom: 2.4rem;
+  border: none;
+  padding: 0;
+}
+
+.form legend {
+  margin-bottom: 1rem;
+  font-size: 20px;
+}
+
+.form-control {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0.75rem;
+}
+
+.form-control label {
+  font-size: 14px;
+  margin-bottom: 0.3rem;
+}
+
+.form-control input {
+  font: inherit;
+  font-size: 14px;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #dde1f0;
+  border-radius: 4px;
+}
+.form-control input:hover {
+  border-color: #cbd5e1;
+}
+.form-control input:focus {
+  outline: none;
+  border-color: #1e293b;
+  box-shadow: 0px 0px 1px #b1b0da;
+}
+
+.info-badge {
+  display: flex;
+  align-items: center;
+  margin: 0.4rem 0;
+}
+
+.info-badge__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  margin-right: 0.2rem;
+  padding: 2px;
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  background-color: #6366f1;
+  color: #eef2ff;
+  font-size: 10px;
+}
+
+.info-badge__label {
+  opacity: 0.8;
+  font-size: 12px;
+}
+
+.button {
+  font: inherit;
+  font-size: 14px;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.25rem;
+  background-color: #5855ea;
+  color: #fff;
+  border: none;
+}
+.button:hover {
+  background-color: #6265f1;
+  cursor: pointer;
+}
+.button:disabled {
+  background-color: #1e293b;
+  opacity: 0.3;
+}
+.button.button--success {
+  background-color: #10b981;
+}
+
+.interest-input {
+  display: flex;
+  align-items: center;
+}
+.interest-input input {
+  flex: 1;
+}
+.form .interest-input__button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 0.5rem;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  margin-left: 0.5rem;
+}
+.form .interest-input__button svg path {
+  fill: #fff;
+}
+
+.interest-badge {
+  position: relative;
+  display: inline-block;
+  border-radius: 24px;
+  background: #e0e7ff;
+  color: #5046e5;
+  padding: 0.5rem 0.75rem;
+  margin-right: 0.5rem;
+  font-size: 14px;
+}
+.interest-badge:hover {
+  cursor: pointer;
+}
+.interest-badge--close {
+  padding-right: 2rem;
+}
+.interest-badge__remove {
+  position: absolute;
+  right: 0.3rem;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 20px;
+  width: 20px;
+  padding: 0 0.25rem;
+}
+.interest-badge__remove__icon {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+.interest-badge__remove__icon svg {
+  transform: rotate(-45deg);
+}
+.interest-badge__remove__icon path {
+  fill: #5046e5;
+}
+
+.interests-error {
+  display: none;
+  align-items: center;
+  color: red;
+  font-size: 14px;
+}
+.interests-error__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  margin-right: 0.2rem;
+  padding: 2px;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  background-color: red;
+  color: #eef2ff;
+  font-size: 12px;
+}
+.interests-error.show {
+  display: inline-flex;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group h4 {
+  margin-bottom: 0.75rem;
+}
+
+.signup-success {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 8px;
+  border: 1px solid #d6e1ee;
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.signup-success__icon {
+  text-align: center;
+  width: 6rem;
+  height: 6rem;
+  padding: 1.25rem;
+  background-color: #d1fae5;
+  border-radius: 50%;
+  margin: 3rem auto;
+}
+.signup-success__icon svg {
+  color: #10b981;
+  fill: currentColor;
+}
+
+.signup-success__label {
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.signup-success li:not(.interest-badge) {
+  margin-bottom: 1.5rem;
+}
+
+.signup-success p {
+  font-size: 18px;
+}
+
+.signup-success .button {
+  display: block;
+  margin: 0 auto;
+  margin-top: 2rem;
+}
+
+.hide {
+  display: none;
+}
