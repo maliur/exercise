@@ -4,7 +4,7 @@
     "pretty": true,
     "sourceMap": false,
     "target": "es6",
-    "outDir": "./dist",
+    "outDir": "./build/assets",
     "baseUrl": "./src",
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
@@ -12,5 +12,5 @@
     "skipLibCheck": true
   },
   "include": ["src/**/*.ts"],
-  "exclude": ["dist", "node_modules"]
+  "exclude": ["build", "node_modules"]
 }
